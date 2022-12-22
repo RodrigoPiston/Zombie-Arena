@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "TextureHolder.h"
 
 Player::Player() {
 	m_Speed = START_SPEED;
@@ -6,9 +7,7 @@ Player::Player() {
 	m_MaxHealth = START_HEALTH;
 
 	// Associate a textre with the sprite
-	m_Texture.loadFromFile("assets/graphics/player.png");
-	
-	m_Sprite.setTexture(m_Texture);
+	m_Sprite = Sprite(TextureHolder::GetTexture("assets/graphics/player.png"));
 
 	// Set the origin of the sprite to the center, for smooth rotation
 	m_Sprite.setOrigin(25, 25);
